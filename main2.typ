@@ -46,13 +46,15 @@
 
 #set page(
   width: 80cm,
-  height: 100cm,
+  height: 110cm,
 )
 
 
 #set text(lang: "es")
 #let uni_dark_blue = rgb("#0F5A5A")
 #let colred(x) = text(fill: red, $#x$)
+
+#let text-args = (weight:"medium",fill:white)
 
 #let autores = [#underline[Javier Roberto Rubalcava Cortés]#super[1],
                 Eliezer Flores Garza#super[2],
@@ -91,19 +93,19 @@ Universitaria, 04510, Ciudad de México, México.
   authors: autores,
   institutes: afiliaciones,
   // keywords: "Awesome, Posters, Science",
-  authors-size: 27pt
+  authors-size: 25pt
 )
 
 
 #pop.column-box()[
 	#set par(justify: true)
-	#set align(center)
+	// #set align(center)
 La tuberculosis es una enfermedad infecciosa grave que afecta principalmente a
   los pulmones y puede ser mortal si no se trata adecuadamente. La emergencia
   de cepas resistentes a los tratamientos convencionales subraya la urgencia de
   diseñar nuevas terapias. 
   // En trabajos previos  se
-  // propuso y validó un modelo mecanístico de la interacción entre
+  // propuso y validó un modelo de la interacción entre
   // bacterias y macrófagos durante la infección, y se realizó un análisis de
   // bifurcación para identificar parámetros críticos en la dinámica del sistema.
   // En este trabajo, nos enfocamos en proponer intervenciones para la enfermedad
@@ -120,19 +122,21 @@ La tuberculosis es una enfermedad infecciosa grave que afecta principalmente a
 
 #columns(2,[
 
-  #pop.column-box(heading: "Objetivos del trabajo.",heading-text-args:(weight:"bold",fill:white))[
+  #pop.column-box(heading: "Objetivos del trabajo.",heading-text-args:text-args)[
     - Usar una combinación de teoría de control y sistemas dinámicos para proponer
       nuevos regímenes de tratamiento.
     - Optimizar las intervenciones propuestas. 
   ]
 
-  #pop.column-box(heading: "Analisis de bifurcación y selección de parámetro.")[
-   Previamente se realizo un análisis de bifurcación del modelo
-    @flores2023bifurcation en el cual se identificaron distintos parámetros 
-    que bifurcan el sistema. 
-    A partir de una remisión de la literatura de 
-    tratamientos de tuberculosis, decidimos enfocarnos en plantear intervenciones 
-    sobre la tasa de fagocitosis (#text(red)[$k_2$]) .
+  #pop.column-box(heading: "Análisis de bifurcación y selección de parámetro.",
+    heading-text-args:text-args)[
+
+     Previamente se realizo un análisis de bifurcación del modelo
+      @flores2023bifurcation en el cual se identificaron distintos parámetros 
+      que bifurcan el sistema. 
+      A partir de una remisión de la literatura de 
+      tratamientos de tuberculosis, decidimos enfocarnos en plantear intervenciones 
+      sobre la tasa de fagocitosis (#text(red)[$k_2$]) .
   ]
   // #pop.column-box()[
   //   #figure(
@@ -144,7 +148,10 @@ La tuberculosis es una enfermedad infecciosa grave que afecta principalmente a
   //   )
   // ]
 
-  #pop.column-box(heading: [El éxito de las intervenciones depende de la intensidad y duración.])[
+  #pop.column-box(heading: [El éxito de las intervenciones depende de la intensidad y duración.],
+  stretch-to-next:true, 
+  heading-text-args:text-args)[
+      #v(2em)
 		#figure(stack(dir: ttb,
 			box([
                 #image("./images/tratemiento_fallido.svg", width: 60.5%)
@@ -177,15 +184,20 @@ La tuberculosis es una enfermedad infecciosa grave que afecta principalmente a
 
   #colbreak()
 
-  #pop.column-box(heading: "Modelo matematico.", stretch-to-next: false)[
-  El modelo mecanistico propuesto previamente en @Flores-Garza2022MathematicalTuberculosis :
+  #pop.column-box(heading: "Modelo matemático.",
+    stretch-to-next: false,
+  heading-text-args:text-args)[
+  El modelo mecanístico propuesto previamente en @Flores-Garza2022MathematicalTuberculosis : \
+
     #modelo_eq
+
   El modelo divide la progresión de la enfermedad en tres etapas, además 
     presenta un comportamiento de "todo o nada".
   ]
 
 
-  #pop.column-box(heading: [Simulación de intervenciones.])[
+  #pop.column-box(heading: [Simulación de intervenciones.],
+    heading-text-args:text-args)[
 		#figure(image("./images/figura_concepto.svg"),
 
       caption: [
@@ -197,7 +209,8 @@ La tuberculosis es una enfermedad infecciosa grave que afecta principalmente a
 	]
 
 
-  #pop.column-box(heading: "Optimización de tratamientos.")[
+  #pop.column-box(heading: "Optimización de tratamientos.", 
+  heading-text-args:text-args)[
     Propusimos una función de costo para plantear un problema de 
     optimización: // usando:
     #set math.equation(numbering: "(1)")
@@ -213,10 +226,9 @@ La tuberculosis es una enfermedad infecciosa grave que afecta principalmente a
     Posteriormente utilizamos métodos de optimización de caja negra
     @Feldt2018 para optimizar los parámetros de la intervención $phistar, tstar$.
   ]
-])
 
-
-  #pop.column-box(heading: "Siguientes pasos del proyecto.", stretch-to-next: false)[
+#pop.column-box(heading: "Siguientes pasos del proyecto.",
+  heading-text-args:text-args)[
    #columns(2, gutter: 11pt)[
    #set par(justify: true)
     - Extender el modelo para considerar antibióticos.
@@ -226,7 +238,12 @@ La tuberculosis es una enfermedad infecciosa grave que afecta principalmente a
     - Utilizar optimización multiobjetivo.
  ]
   ]
-  #pop.column-box(heading: "Referencias.", stretch-to-next: false)[
+])
+
+
+  
+  #pop.column-box(heading: "Referencias.", stretch-to-next: false,
+ heading-text-args:text-args)[
     #set text(size: 24pt,lang:"es")
     #bibliography("./references.bib",
     title: none)
