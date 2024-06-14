@@ -82,8 +82,10 @@ Universitaria, 04510, Ciudad de México, México.
   #colred[$k_2$] (1 + M_f k_(13) k_(17))- M_f T_f k_4.$
 
 #stack(dir: ltr, 
-          spacing:20%,
+          // spacing:10%,
       figure(image("./Logo-FC-Color.jpg", width:20%)),
+      figure(image("./Logo-feria-black.svg", width: 20%)),
+      // figure(image("./Logo-feria-purple.svg", width: 20%)),
       figure(image("./Logo-SysBio.png", width: 20%)),
       figure(image("./Logo-IIBO.png", width: 20%)), 
     )
@@ -131,12 +133,12 @@ La tuberculosis es una enfermedad infecciosa grave que afecta principalmente a
   #pop.column-box(heading: "Análisis de bifurcación y selección de parámetro.",
     heading-text-args:text-args)[
 
-     Previamente se realizo un análisis de bifurcación del modelo
-      @flores2023bifurcation en el cual se identificaron distintos parámetros 
-      que bifurcan el sistema. 
-      A partir de una remisión de la literatura de 
-      tratamientos de tuberculosis, decidimos enfocarnos en plantear intervenciones 
-      sobre la tasa de fagocitosis (#text(red)[$k_2$]) .
+     - Previamente se realizo un análisis de bifurcación del modelo
+       @flores2023bifurcation en el cual se identificaron distintos parámetros 
+       que bifurcan el sistema. 
+     - A partir de una revisión de la literatura de 
+       tratamientos de tuberculosis, decidimos enfocarnos en plantear intervenciones 
+       sobre la tasa de fagocitosis (#text(red)[$k_2$]) .
   ]
   // #pop.column-box()[
   //   #figure(
