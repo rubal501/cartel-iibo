@@ -83,11 +83,11 @@ Universitaria, 04510, Ciudad de México, México.
 
 #stack(dir: ltr, 
           // spacing:10%,
-      figure(image("./Logo-FC-Color.jpg", width:20%)),
-      figure(image("./Logo-feria-black.svg", width: 20%)),
+      figure(image("./logos/Logo-FC-Color.jpg", width:20%)),
+      figure(image("./logos/Logo-feria-black.svg", width: 20%)),
       // figure(image("./Logo-feria-purple.svg", width: 20%)),
-      figure(image("./Logo-SysBio.png", width: 20%)),
-      figure(image("./Logo-IIBO.png", width: 20%)), 
+      figure(image("./logos/Logo-SysBio.png", width: 20%)),
+      figure(image("./logos/Logo-IIBO.png", width: 20%)), 
     )
 
 #pop.title-box(
