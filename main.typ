@@ -1,5 +1,4 @@
-// #import "@preview/peace-of-posters:0.4.0" as pop
-#import "./peace-of-posters/lib.typ" as pop
+#import "@preview/peace-of-posters:0.4.1" as pop
 #import "@preview/physica:0.9.3" : *
 
 #let k2 = [(#text(red)[$k_2$]) ]
